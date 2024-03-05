@@ -1,0 +1,73 @@
+{% extends "app_moviplus/base.html" %}
+{% load static %}
+{% block title %} CinePlus | Registrarse {% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/estilos.css" %}">
+<div class="container ">
+    <h1 class="text-center titulo-registro">Formulario de Registro</h1>
+    <div class="row d-flex align-items-center justify-content-center mb-2">
+        <div class="col-12 col-md-6 align-items-center">
+            <form method="POST" action="{% url 'registro' %}" class="form-registro mb-3">
+                {% csrf_token %}
+                <div class="form-group mb-3">
+                    <input type="text" name="{{ form.first_name.name }}" class="form-control" placeholder="Ingrese su nombre">
+                </div>
+            
+                <div class="form-group mb-3">
+                    <input type="text" name="{{ form.last_name.name }}" class="form-control" placeholder="Ingrese su apellido">
+                </div>
+            
+                <div class="form-group mb-3">
+                    <input type="email" name="{{ form.email.name }}" class="form-control" placeholder="ejemplo@ejemplo.com">
+                </div>
+            
+                {% if form.username.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.username.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            
+                <div class="form-group">
+                    <input type="text" name="{{ form.username.name }}" class="form-control" placeholder="Ingrese un nombre de usuario">
+                </div>
+            
+                {% if form.password1.errors or form.password2.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.password1.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                        {% for error in form.password2.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            
+                <div class="form-group mb-3">
+                    <ul>
+                        <li class="titulo-li">La contraseña debe contener mínimo 8 caracteres</li>
+                        <li class="titulo-li">Debe contener al menos una letra mayúscula</li>
+                        <li class="titulo-li">Debe contener números</li>
+                        <li class="titulo-li">Debe contener al menos un carácter especial</li>
+                    </ul>
+                    <input type="password" name="{{ form.password1.name }}" class="form-control" id="pass1" placeholder="Ingrese contraseña">
+                </div>
+                
+                <div class="form-group mb-3">
+                    <input type="password" name="{{ form.password2.name }}" class="form-control" id="pass2" placeholder="Repita contraseña">
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="showPasswordCheckbox">
+                        <label class="form-check-label" for="exampleChek1">Ver contraseña</label>
+                    </div>
+                </div>
+            
+                <button type="submit" class="btn btn-primary btn-registro w-100">Registrarse</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

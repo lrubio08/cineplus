@@ -1,0 +1,31 @@
+
+{% extends "app_moviplus/base.html" %}
+{% load static %}
+{% block title %} CinePlus | Reparto {% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/estilos.css" %}">
+<div class="container">
+    <div class="row">
+        <h1 class="text-center mt-4 mb-4 titulo"> {{pelicula.title}} </h1>
+        {% for actor in reparto %}
+            <div class="col-12 col-md-6 col-lg-4  d-flex">
+                <div class="card mb-3 flex-fill" >
+                    {% if actor.profile_path %}
+                        <img src="https://image.tmdb.org/t/p/w500/{{ actor.profile_path }}" class="card-img-top img-card" alt="{{ actor.name }}">
+                    {% else %}
+                        <img src="{% static "imagenes/no_disponible.png" %}" class="card-img-top img-card" alt="Imagen no disponible">
+                    {% endif %}
+                    <div class="flex-grow-1 d-flex flex-column justify-content-center">
+                        <h5 class="text-center card-title">Nombre actor:  {{ actor.name }}</h5>
+                        <p class="card-text text-light text-center">Personaje: {{ actor.character }}</p>
+                    </div>
+                    <div class="card-body custom-card-body">
+                        <a href="{% url 'actor_buscado_by_id' actor.id %}" class="btn btn-primary btn-card">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

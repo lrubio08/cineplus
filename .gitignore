@@ -1,0 +1,33 @@
+
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+
+# Entorno virtual
+env_peliculas/
+
+# Archivo .env
+.env
+
+# Otros archivos y directorios a ignorar
+*.bak
+
+staticfiles/
+
+# AWS User-specific
+.idea/**/aws.xml
+
+# Archivos generados
+.idea/**/contentModel.xml
+
+# Archivos sensibles o de alta rotación
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml

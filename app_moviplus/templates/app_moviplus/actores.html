@@ -1,0 +1,34 @@
+{% extends "app_moviplus/base.html" %}
+{% load static %}
+{% block title %} CinePlus | Actores  {% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/estilos.css" %}">
+<h1 class="text-center titulo mt-4 mb-4">Actores Populares </h1>
+<div class="container">
+    <div class="row d-flex justify-content-end">
+        <div class="col-12  mb-4 d-flex justify-content-end">
+            <form method="GET" class="d-flex" action="{% url "actor_buscado" %}">
+                <input class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search" name="q">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        {% for actor in actores  %}
+            <div class="col-12 col-md-6 col-lg-4  d-flex">
+                <div class="card mb-3 flex-fill" >
+                    <img src="https://image.tmdb.org/t/p/w500/{{ actor.profile_path }}"  class="card-img-top img-card" alt="{{ actor.name }}">
+                    <div class="flex-grow-1 d-flex flex-column justify-content-center">
+                        <h5 class="text-center card-title"> Nombre: {{actor.name}}</h5>
+                    </div>
+                    <div class="card-body custom-card-body">
+                        <a href="{% url 'actor_buscado_by_id' actor.id %}" class="btn btn-primary btn-card">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

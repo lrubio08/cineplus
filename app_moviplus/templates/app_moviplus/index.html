@@ -1,0 +1,92 @@
+{% extends "app_moviplus/base.html" %}
+{% load static %}
+{% block title %} CinePlus | Home {% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/estilos.css" %}">
+<div class="container cine-container">
+    <h1 class="text-center mt-4 mb-4 titulo">Bienvenidos a <span>CinePlus</span> !</h1>
+    <div class="row text-light d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6  mt-3 telon" >
+            <div id="carouselExampleCaptions" class="carousel slide custom-carrusel" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-indicators">
+                    {% for pelicula in peliculas  %}
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
+                    {% endfor %}
+                </div>
+                <div class="carousel-inner custom-carrusel">
+                    {% for pelicula in peliculas %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <img src="https://image.tmdb.org/t/p/w500/{{ pelicula.poster_path }}" alt="{{ pelicula.title }}"  class=" w-100" >
+                        </div>
+                    {% endfor %}
+                </div>
+                <div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row d-flex align-items-center justify-content-center mt-3">
+        <div class="col-12 col-lg-8 custom-background">
+            <h2 class=" subtitulo-principal">¿Eres Fanatico del cine?, Esto te ofrecemos:</h2>
+            <ul class="parrafo-principal">
+                <li class="mb-3">
+                    <strong class="titulo-li">
+                        Explorar películas:
+                    </strong>
+                    Descubre las últimas películas en estreno y en cartelera. Busca tus películas favoritas por título y descubre lo que está en tendencia.
+                </li>
+                <li class="mb-3">
+                    <strong class="titulo-li">
+                        Ver trailers:
+                    </strong>
+                    Para cada película, puedes ver el trailer disponible para tener una idea de lo que puedes esperar.
+                </li>
+                <li class="mb-3" >
+                    <strong class="titulo-li">
+                                Conocer el reparto:
+                    </strong>
+                    Obtén información detallada sobre el reparto de cada película. Conoce a los actores, sus personajes y más.
+                </li>
+                <li class="mb-3">
+                    <strong class="titulo-li">
+                        Valoraciones de películas:
+                    </strong>
+                    : Consulta las valoraciones de las películas para ayudarte a decidir qué ver. También puedes dejar tus propias valoraciones para compartir tus opiniones con otros.
+                </li>
+                <li class="mb-3" >
+                    <strong class="titulo-li">
+                        Detalles de la película:
+                    </strong>
+                    Para cada película, te proporcionamos una gran cantidad de detalles, desde la sinopsis hasta el director, el género y mucho más.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row text-light">
+        <div class="col-12 d-flex justify-content-center">
+            <p class="parrafo-llamativo text-center">
+                ¡Únete a <span>CinePlus</span> y sumérgete en el fascinante mundo del cine.!
+            </p>
+        </div>
+    </div>
+    <div class="row text-light">
+        <div class="col-12 col-md-6 d-flex justify-content-center mb-3 mt-3">
+            <a href="{% url "registro" %}"><button class="btn btn-primary btn-index">Registrate</button></a>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center mb-3 mt-3">
+            <a href="{% url "iniciar_sesion" %}"><button class="btn btn-primary btn-index">Inicia Sesión</button></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

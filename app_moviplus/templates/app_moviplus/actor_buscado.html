@@ -1,0 +1,37 @@
+
+{% extends "app_moviplus/base.html" %}
+{% load static %}
+{% block title %} CinePlus | {{query}} {% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/estilos.css" %}">
+<div class="container">
+    <h1 class="text-center  titulo mt-4 mb-4">{{ query }}</h1>
+    {% if actor_buscado %}
+        <div class="row">
+            <div class="col-12 col-md-3 d-flex align-items-center">
+                {% for actor in actor_buscado %}
+                    <div class="card mb-3 flex-fill" >
+                        <img src="https://image.tmdb.org/t/p/w500/{{ actor.profile_path }}"  class="card-img-top" alt="{{ actor.name }}">
+                        <div class="flex-grow-1 d-flex flex-column justify-content-center">
+                            <h4 class="text-center text-light">Nombre: {{ actor.name }}</h4>
+                        </div>
+                        <div class="card-body custom-card-body">
+                            <a href="{% url 'pelicula_actor' actor.id %}" class="btn btn-primary btn-card">Sus Peliculas populares </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-12 col-md-8 custom-background mb-4 p-4">
+                {% if actor_detalles %}
+                    <h2 class="text-light ">Biografía:</h2>
+                    <p class="text-light parrafo-principal"> {{ actor_detalles.biography | default:"Información no disponible "}}</p>
+                    <p class="text-light">Fecha de nacimiento: {{ actor_detalles.birthday |default:"Información no disponible"}}</p>
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <p>No se encontraron resultados.</p>
+    {% endif %}
+</div>
+{% endblock %}

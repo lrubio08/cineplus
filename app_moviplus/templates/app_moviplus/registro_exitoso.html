@@ -1,0 +1,22 @@
+{% extends "app_moviplus/base.html" %}
+{% load static %}
+{% block title %} CinePlus | Registro Exitoso {% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/estilos.css" %}">
+<div class="container container-registro-exitoso">
+    <div class="row ">
+        <div class="col-12 col-lg-6 ">
+            <h1 class="titulo-registro-exitoso">¡Tu registro a sido exitoso, por favor confirma tu correo!</h1>
+        </div>
+        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
+            <a href="https://mail.google.com/" target="_blank">
+                <button class="btn btn-primary btn-gmail">Ir a Gmail</button>
+            </a>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

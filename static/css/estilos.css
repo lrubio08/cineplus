@@ -1,0 +1,276 @@
+/*body*/
+body{
+    background-image:url('../imagenes/fondo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+
+/*Barra de navegacion*/
+nav {
+    background-color: rgba(0, 0, 64, 0.8); 
+    box-shadow: 0 0 25px rgba(1, 86, 175, 0.842);
+    color: white;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    font-family: 'PlayfairDisplaySC-Black';
+    letter-spacing: 2px;
+}
+
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.collapse .form-control{
+    width: auto !important;
+}
+
+.logo{
+    width: 5rem;
+    border-radius: 50%;
+}
+
+/*Index | Home*/
+.titulo{
+    color:yellow;
+    font-family: 'PlayfairDisplaySC-Black';
+    font-size: 3.5rem;
+}
+
+.titulo span{
+    font-family: 'Roboto' sans-serif;
+    color: red;
+}
+
+.custom-carrusel img {
+    height: 400px; 
+    width: auto; 
+    z-index: 2;
+    
+}
+
+.custom-carrusel {
+    overflow: hidden; 
+    position: relative;
+    border: 10px solid #000; 
+    border-radius: 15px; 
+    box-shadow: 0 0 15px rgba(1, 86, 175, 0.842);
+    
+}
+
+.subtitulo-principal{
+    margin: 30px;
+    font-family: 'PlayfairDisplaySC-Black';
+    color:white;
+}
+
+.parrafo-principal{
+    color: white;
+    letter-spacing: 2px;
+}
+
+.custom-background{
+    background-color:rgba(0, 0, 69, 0.9) ;
+    box-shadow: 0 0 15px rgba(1, 86, 175, 0.842);
+    gap: 1rem;
+}
+
+.titulo-li{
+    color: red;
+}
+
+.parrafo-llamativo{
+    font-size: 24px;
+    font-family: 'Oswald SemiBold', sans-serif;
+    background-color: #020E6F;
+    border: 5px solid yellow;
+    box-shadow:  0 0 15px rgba(246, 248, 150, 0.842);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.parrafo-llamativo:hover{
+    background-color: #004080;
+    color: white;
+    cursor: pointer;
+}
+
+.parrafo-llamativo span{
+    color: red;
+}
+
+/*botones inicio y registro*/
+.btn-index{
+    width: 20rem;
+    padding: 15px;
+    font-size: 24px;
+    background-color: #010731;
+    border: 5px solid yellow;
+    border-radius: 0 !important;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 7px rgba(246, 248, 150, 0.842);
+}
+
+.btn-index:hover{
+    box-shadow: 4px 4px 7px rgba(251, 252, 198, 0.842);
+    background-color: #004080;
+    border: 5px solid rgb(250, 250, 213);
+}
+
+/*Registro de usuarios*/
+
+.titulo-registro{
+    color:white;
+    font-family: 'PlayfairDisplaySC-Black';
+    font-size: 3rem;
+    letter-spacing: 4px;
+}
+
+.container-registro-exitoso {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Registro Exitoso*/
+
+.btn-gmail{
+    width: 300px;
+    height: 70px;
+    font-size: 30px;
+    font-family: 'PlayfairDisplaySC-Black';
+    margin-bottom: 1rem;
+    background-color:rgba(0, 0, 69, 0.9) ;
+    border: none !important;
+    box-shadow: 4px 4px 7px rgba(255, 255, 255, 0.6);
+}
+
+.btn-gmail:hover{
+    background-color: rgb(41, 39, 39);
+}
+
+.titulo-registro-exitoso{
+    background-color:rgba(0, 0, 69, 0.9) ;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 4px 4px 7px rgba(255, 255, 255, 0.6);
+    color:white;
+    font-family: 'PlayfairDisplaySC-Black';
+    font-size: 3rem;
+    letter-spacing: 4px;
+}
+
+/*Incio de Sesión*/
+
+.titulo-inicio-sesion{
+    color:white;
+    font-family: 'PlayfairDisplaySC-Black';
+    font-size: 3rem;
+    letter-spacing: 4px;
+}
+
+/*Sala privada*/
+
+
+select{
+    height: auto;
+    padding: 0.8rem;
+    background-color:rgba(0, 0, 69, 0.9) ;
+    border: none;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    box-shadow: 0 0 15px rgba(1, 86, 175, 0.842);
+}
+
+/*pelicula seleccionada*/
+.btn-reparto{
+    width: 20rem;
+    padding: 15px;
+    font-size: 24px;
+    background-color:transparent;
+    border-radius: 0 !important;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 7px rgba(246, 248, 150, 0.842);
+}
+
+.btn-index:hover{
+    box-shadow: 4px 4px 7px rgba(251, 252, 198, 0.842);
+}
+
+.img-card {
+    min-height: 200px;
+    max-height: 400px;
+    width: auto;
+}
+
+.card {
+    background-color: transparent;
+    margin: 0.7em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(36, 139, 248, 0.842);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title{
+    font-family: 'PlayfairDisplaySC-Black';
+    color: white;
+}
+.btn-card{
+    background-color: #000043;
+    width: 100%;
+}
+
+.btn-card:hover{
+    background-color:#00006B;
+}
+
+/*Peliculas | traliers*/
+
+.cinema-style{
+    overflow: hidden;
+    position: relative;
+    border: 10px solid #000043;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(1, 86, 175, 0.842);
+}
+
+.img-trailers{
+    width: 300px;
+}
+
+iframe{
+    width: 80vw;
+    height: 60vh;
+}
+
+.trailer-title {
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/*Footer*/
+
+footer{
+    font-family: 'PlayfairDisplaySC-Black';
+    font-size: 1em;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 64, 0.8);
+    margin-top: auto;
+}
