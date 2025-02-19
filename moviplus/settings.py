@@ -27,10 +27,7 @@ SECRET_KEY = 'django-insecure-0-c(jewv)ix-l@*_@p%i!2f#8l6tpo!0cwlj3r@bw=#l2=4%k%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-APP_NAME = os.environ.get("FLY_APP_NAME")
-ALLOWED_HOSTS = [f"{APP_NAME}.fly.dev",]
-
-
+ALLOWED_HOSTS = ['cineplus.luisrubiodev.cl']
 
 # Application definition
 
@@ -57,7 +54,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://cineplus.fly.dev",]
+CSRF_TRUSTED_ORIGINS = ['https://cineplus.luisrubiodev.cl']
+
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
@@ -89,12 +87,12 @@ import dj_database_url
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME' : 'postgres',
-        'USER' : config('USER'),
-        'PASSWORD':config('PASSWORD'),
-        'HOST' : 'cine-plus.internal',
-        'PORT' : '5433'
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='3306'),
     }
 }
 
