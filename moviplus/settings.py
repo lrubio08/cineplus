@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-0-c(jewv)ix-l@*_@p%i!2f#8l6tpo!0cwlj3r@bw=#l2=4%k%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['cineplus.luisrubiodev.cl']
+ALLOWED_HOSTS = ['cineplus.luisrubiodev.cl', '127.0.0.1', 'localhost', '46.202.150.5']
 
 # Application definition
 
@@ -147,12 +147,3 @@ AUTH_USER_MODEL = 'auth.User'
 
 #Variable de entorno para clave APi de TMDB
 TMDB_API_KEY= config('TMDB_API_KEY', default='')
-
-# Configuración de Gmail, con variables de entorno 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD =config('EMAIL_HOST_PASSWORD')
-
