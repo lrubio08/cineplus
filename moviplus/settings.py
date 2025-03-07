@@ -29,6 +29,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['cineplus.luisrubiodev.cl', '127.0.0.1', 'localhost', '46.202.150.5']
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://cineplus.luisrubiodev.cl']
+CSRF_TRUSTED_ORIGINS = ['http://cineplus.luisrubiodev.cl', 'https://cineplus.luisrubiodev.cl']
 
 
 SECURE_BROWSER_XSS_FILTER = True
@@ -136,9 +137,10 @@ USE_TZ = True
 
 
 # Configuración para archivos estáticos 
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

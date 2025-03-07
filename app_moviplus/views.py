@@ -29,7 +29,7 @@ def index(request):
     context = {'peliculas': random_peliculas}
     return render(request, 'app_moviplus/index.html', context)
 
-    def registro(request):
+def registro(request):
         try:
             if request.method == 'POST':
                 print(f"Datos POST recibidos: {request.POST}")
@@ -45,6 +45,7 @@ def index(request):
         except Exception as e:
             print(f"Error en la vista de registro: {e}")
             raise
+
 
 def registro_exitoso(request):
     return render(request,'app_moviplus/registro_exitoso.html')
