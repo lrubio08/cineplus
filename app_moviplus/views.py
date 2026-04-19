@@ -29,7 +29,7 @@ def index(request):
     context = {'peliculas': random_peliculas}
     return render(request, 'app_moviplus/index.html', context)
 
-    def registro(request):
+def registro(request):
         try:
             if request.method == 'POST':
                 print(f"Datos POST recibidos: {request.POST}")

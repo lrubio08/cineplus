@@ -15,19 +15,20 @@ import os
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0-c(jewv)ix-l@*_@p%i!2f#8l6tpo!0cwlj3r@bw=#l2=4%k%'
+SECRET_KEY = config('SECRET_KEY')
+TMDB_API_KEY= config('TMDB_API_KEY', default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['cineplus.luisrubiodev.cl', '127.0.0.1', 'localhost', '46.202.150.5']
+
+
 
 # Application definition
 
@@ -54,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://cineplus.luisrubiodev.cl']
+CSRF_TRUSTED_ORIGINS = ['https://cineplus.luisrubiodev.tech']
 
 
 SECURE_BROWSER_XSS_FILTER = True
@@ -83,18 +84,9 @@ WSGI_APPLICATION = 'moviplus.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-import dj_database_url
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='3306'),
-    }
-}
+
+
 
 
 
@@ -138,6 +130,9 @@ USE_TZ = True
 # Configuración para archivos estáticos 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -145,5 +140,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'auth.User'
 
-#Variable de entorno para clave APi de TMDB
-TMDB_API_KEY= config('TMDB_API_KEY', default='')
+SITE_ID = 1
