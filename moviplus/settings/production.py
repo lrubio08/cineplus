@@ -3,7 +3,7 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['cineplus.luisrubiodev.tech', '127.0.0.1', 'localhost', '46.202.150.5']
+ALLOWED_HOSTS = ['cineplus.luisrubiodev.tech', '127.0.0.1','146.190.120.160', '46.202.150.5']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
