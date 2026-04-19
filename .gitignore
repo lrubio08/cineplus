@@ -8,6 +8,7 @@ media
 
 # Entorno virtual
 env_peliculas/
+venv/
 
 # Archivo .env
 .env

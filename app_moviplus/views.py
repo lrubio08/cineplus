@@ -46,6 +46,7 @@ def registro(request):
             print(f"Error en la vista de registro: {e}")
             raise
 
+
 def registro_exitoso(request):
     return render(request,'app_moviplus/registro_exitoso.html')
 

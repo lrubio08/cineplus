@@ -30,6 +30,7 @@ TMDB_API_KEY= config('TMDB_API_KEY', default='')
 
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -128,6 +129,7 @@ USE_TZ = True
 
 
 # Configuración para archivos estáticos 
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
