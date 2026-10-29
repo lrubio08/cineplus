@@ -62,6 +62,7 @@ CSRF_TRUSTED_ORIGINS = ['https://cineplus.luisrubiodev.tech']
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 
 ROOT_URLCONF = 'moviplus.urls'
 
